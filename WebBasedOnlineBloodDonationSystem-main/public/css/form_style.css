@@ -1,0 +1,451 @@
+/* Common Parts */
+
+/* Nav Bar */
+
+body{
+  font-family: 'Ubuntu', sans-serif;
+  background-image: url("/images/bg-1.jpg");
+  background-size: cover; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  
+  }
+
+
+  
+.navbar {
+    padding: .8rem;
+    background-color: #ffe4e4;
+  }
+  .navbar-nav li {
+    padding-left: 20px;
+  }
+  .nav-link {
+    font-size: 1.1em !important;
+  }
+
+/* Main */
+.main {
+    
+    
+    
+    padding:25px;
+  }
+
+/* Footer */
+  
+  footer {
+    background-color: #1b262c;
+    color: #d5d5d5;
+    padding-top: 2rem;
+  }
+  hr.light {
+    border-top: 1px solid #d5d5d5;
+    width: 75%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
+  }
+  footer a {
+    color: #d5d5d5;
+  }
+  hr.light-100 {
+    border-top: 1px solid #d5d5d5;
+    width: 100%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
+  }
+  .heading{
+    font-family: 'Domine', serif;
+  }
+
+/* Overall Font */
+
+  .paras{
+    font-family: 'Ubuntu', sans-serif;
+  }
+
+/* ------------------------------------------Contact US CSS -------------------------------------------*/
+
+.get_in_touch{
+    max-width: 800px;
+    margin-left: 290px;
+    position: relative;
+    padding: 30px;
+  }
+  .card{
+    /* box-shadow: 10px 10px 10px 10px #D3D3D3; */
+    margin: 0 auto 0px auto;
+    width: 560px;
+    
+  }
+  
+  .get_in_touch .contact{
+    position: relative;
+    padding: 50px 100px;
+  }
+  
+  .get_in_touch .title{
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 3em;
+    line-height: 48px;
+    padding-bottom: 20px;
+    color: #fff;
+    background: linear-gradient(to right, #fff 0%,#000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .contact-form .form-field{
+    position: relative;
+    margin: 32px 0;
+  }
+  
+  .contact-form .input-text{
+    display: block;
+    width: 100%;
+    height: 36px;
+    border-width: 0 0 2px 0;
+    border-color: #000;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+  }
+  
+  .contact-form .input-text:focus +.label,
+  .contact-form .input-text.not-empty +.label{
+    transform: translateY(-24px);
+  }
+  
+  .contact-form .input-text:focus{
+    outline: none;
+  }
+  
+  .contact-form .label{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #000;
+    cursor: text;
+    text-transform: capitalize;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .contact-form .submit-btn{
+    display: inline-block;
+    background-image: linear-gradient(125deg, #fff, #000);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    width: 200px;
+    cursor: pointer;
+  }
+  
+  .get_in_touch .contact .content .title2{
+    text-transform: uppercase;
+    text-align: left;
+    letter-spacing: 1.5px;
+    font-size: 1.5em;
+    line-height: 40px;
+    padding-bottom: 15px;
+    padding-left: 0px;
+    color: #fff;
+    background: linear-gradient(to right, #D3D3D3 0%,#000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .contact .para{
+    position: relative;
+    left: 10px;
+    bottom: 11px;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    color: #000;
+    text-transform: capitalize;
+  }
+
+  /*----------------------------------------Admin -User Edit ------------------------------------------*/
+
+  span{
+    font-size: 35px;
+    color: black;
+    }
+ .btn{
+    border-radius: 20px;
+    border: none;
+    }
+body h2 {
+    font-family: 'Domine', serif;
+    }
+.register{
+    color: #000;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    
+    font-family: 'Domine', serif;
+    }
+
+/* ----------------------------------Admin Donor Edit ----------------------------*/
+
+.update{
+    margin : 0px auto 0px auto;
+}
+
+/* --------------------------Admin Volunteer Edit ------------------------*/
+
+                             /*No change Needed */
+                        
+/* --------------------------Camps Organiser Edit ------------------------*/
+
+                            /*No change Needed */
+
+/*-------------------------------FAD Styles ---------------------------------------*/
+
+.fadbutton{
+    border-radius: 20px;
+    border: none;
+    display: inline-block;
+    background-image: linear-gradient(125deg, #D3D3D3, #000);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 18px;
+    padding: 8px 16px;
+    border: none;
+    width: 200px;
+    cursor: pointer;
+  }
+  .row{
+    justify-content: center;
+  }
+  .card2 {
+    width: 1250px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .damn_border{
+    border-style: solid;
+    border-color: #000;
+    border-width: 2px;
+  }
+  .registerfad{
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 2.5em;
+    line-height: 48px;
+    padding-bottom: 20px;
+    color: #000;
+    background: linear-gradient(to right, #D3D3D3 0%,#000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  table{
+    padding-left: 50px;
+    color: #000 !important;
+    border: 10px 10px 10px 10px;
+    padding-bottom: 50px;
+  }
+  th{
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #000 !important;
+  }
+  td{
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+    color: #000 !important;
+    padding-bottom: 20px;
+  }
+  table{
+    border: 10px 10px 10px 10px;
+    padding-bottom: 50px;
+    background-color: #ffe4e4;
+  } 
+  td i{
+    color: #000 !important;
+  }
+
+  /*---------------------------------------login----------------------------------*/
+
+  .content-login{
+    margin-top: -20px;
+    margin-bottom: 200px;
+  }
+  .form-container{
+    background: #fff;
+    margin-top: 50%;
+    width: 350px;
+    height: 550px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+    color: #fff;
+  
+  }
+  .user{
+    width: 100px;
+    height: 100px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+  }
+  .register-login{
+    text-align: center;
+    padding-top: 10px;
+  }
+
+/*------------------------------------Verify-------------------------------------*/
+
+.card-verify{
+  width: 500px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.btn-verify {
+  background-color: #000;
+  border-radius: 20px;
+  border: none;
+}
+
+/*----------------------------------Profile Update for user -----------------------*/
+
+
+.card-profile {
+  width: 500px;
+  display: block;
+  justify-content: center;
+  margin-left: 200px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
+
+.first_row{
+  margin-top: 100px;
+  }
+
+  main {
+    margin-top: 60px;
+    min-height: 90vh;
+    padding: 1rem 3rem;
+  }
+
+  .dash-title {
+    margin-bottom: 1rem;
+  }
+
+  .dash-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+  }
+
+  .card-single {
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2) ;
+  }
+
+  .card-body1 {
+    padding: 1.3rem 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .card-body1 span {
+    font-size: 1.5rem;
+    color: #777;
+    padding-right: 1.4rem;
+  }
+  
+  .card-body1 h5 {
+    font-size: 1rem;
+  }
+
+  .card-body1 h4 {
+    font-size: 1.1rem;
+    margin-top: .2rem;
+  }
+
+  .card-footer {
+     padding: .2rem 1rem;
+     background: #f9fafc;
+  }
+
+  .card-footer a {
+    color: purple;
+  }
+
+  .recent {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .activity-grid {
+    display: grid;
+  }
+
+  .activity-card {
+    background: #fff;
+    border-radius: 7px;
+  }
+
+  .activity-card h3 {
+    margin: 1rem;
+  }
+
+  .activity-card table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .activity-card thead {
+    background: #efefef;
+    text-align: left;
+  }
+
+  th, td {
+    font-size: .9rem;
+    padding: 1rem .5rem;
+  }
+
+  td {
+    font-size: .8rem;
+  }
+
+  .badge {
+    padding: .2rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: .7rem;
+  }
+
+  .badge .success {
+    background: #DEF7EC;
+    color: var(--main-color);
+
+  }
+
+  .badge .warning {
+    background: #F0F6B2;
+    color: orange;
+
+  }

@@ -1,0 +1,65 @@
+body{
+  background: url("/images/bg-1.jpg");
+  background-size: cover; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100% ;
+  font-family: 'Ubuntu', sans-serif;
+  overflow-x: hidden;
+}
+
+.navbar {
+  padding: .8rem;
+  background-color: #ffe4e4;
+
+}
+.navbar-nav li {
+  padding-left: 20px;
+}
+.nav-link {
+  font-size: 1.1em !important;
+}
+.main{
+  background: url("/images/bg-1.jpg");
+  background-size: cover; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100% ;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  text-align: center;
+}
+.card{
+  background-color: #fff;
+  width: 500px;
+  height: 500px;
+  margin-right:auto;
+  margin-left:auto;
+}
+/* Footer */
+
+footer {
+  background-color: #1b262c;
+  color: #d5d5d5;
+  padding-top: 2rem;
+  
+}
+hr.light {
+  margin-left: 40px;
+  border-top: 1px solid #d5d5d5;
+  width: 75%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+}
+footer a {
+  color: #d5d5d5;
+}
+hr.light-100 {
+  border-top: 1px solid #d5d5d5;
+  width: 100%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+}
+.paras{
+  font-family: 'Ubuntu', sans-serif;
+}

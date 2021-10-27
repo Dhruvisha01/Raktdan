@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>LOGIN</title>
+
+
+  <!-- CSS Stylesheets -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/form_style.css">
+
+  <!-- Font Awesome -->
+
+  <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <!--Bootstrap Scripts -->
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+  <!--font-->
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Domine&family=Ubuntu&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!--Navigation-->
+
+
+  <nav class="navbar navbar-expand-md navbar-light navbar-custom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/index"><img src="/images/logo.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/index">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/facts">FACTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/fad">FIND</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/campsMain">CAMPS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact-us">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+
+          <% if (!!req.session.loggedin) {%>
+            <li class="nav-item paras active">
+              <a class="nav-link" href="/home">PROFILE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login/logout">LOGOUT</a>
+            </li>
+            <% } else{ %>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">REGISTER</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">LOGIN</a>
+              </li>
+              <% } %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Content-->
+
+
+
+  <section class="main">
+    <div class="content-login">
+
+
+      <section class="container-fluid">
+        <section class="row justify-content-center">
+          <section class="col-12 col-sm-6 col-md-3 parent">
+
+            <form class="form-container bg-dark my-10" action="/login/auth" method="POST">
+              <img class="user" src="/images/user.png" alt="user image">
+
+              <% if (message.length> 0) { %>
+                <div class="echo-msg">
+                  <%= message %>
+                </div>
+                <% } %>
+
+                  <div class="input-group mb-3 mt-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="fas fa-user"></i>
+                      </span>
+                    </div>
+
+                    <input type="email" name="email" class="form-control paras" id="exampleInputEmail1"
+                      aria-describedby="emailHelp" placeholder="Username">
+                    <small id="emailHelp" class="form-text text-muted paras">We'll never share your email with anyone
+                      else.</small>
+                  </div>
+                  <div class="input-group mb-3 mt-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="fas fa-lock"></i>
+                      </span>
+                    </div>
+                    <input type="password" name="password" class="form-control paras" id="exampleInputPassword1"
+                      aria-describedby="passwordHelp" placeholder="Password">
+                    <small id="passwordHelp" class="form-text text-muted paras">We will never share your details with
+                      anyone</small>
+                  </div>
+                  <div class="form-check-inline text-left paras">
+                    <label class="form-check-label my-3 text-left paras">Type: </label>
+                  </div>
+                  <div class="form-check-inline">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input my-3  paras" name="optradio" value="user">User
+                    </label>
+                  </div>
+                  <div class="form-check-inline">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input my-3  paras" name="optradio" value="bb">Blood
+                      Bank/Hospital
+                    </label>
+                  </div>
+                  <div class="form-group form-check mb-3 mt-4">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label paras" for="exampleCheck1">Keep me signed in</label>
+                  </div>
+                  <button type="submit" name="submit" class="btn btn-primary btn-block paras">LOGIN</button>
+                  <div class="register-login paras">
+                    <a href="/register">Not a user? Register Now</a>
+                  </div>
+                  <!-- <div class="register paras">
+                    <a href="#">Forgot Password?</a>
+                  </div> -->
+
+            </form>
+
+          </section>
+
+        </section>
+      </section>
+
+    </div>
+
+  </section>
+
+
+
+  <!--Footer-->
+  <footer>
+    <div class="container-fluid padding">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <img src="/images/rsz_raktadaan_logo.jpg">
+          <hr class="light">
+          <p>555-555-5555</p>
+          <p>raktdan@gmail.com</p>
+          <p>A-5,Paradise,Godrej Hill</p>
+          <p>Kalyan,Thane,Maharshtra,India</p>
+        </div>
+        <div class="col-md-4">
+          <hr class="light">
+          <h5>Offline Hours</h5>
+          <hr class="light">
+          <p>Monday: 9am-5pm</p>
+          <p>Saturday: 10am-4pm</p>
+          <p>Sunday: 10am-1pm</p>
+        </div>
+        <div class="col-md-4">
+          <hr class="light">
+          <h5 class="heading">Service Areas</h5>
+          <hr class="light">
+          <p class="paras">Mumbai,Maharashtra,400601</p>
+          <p class="paras">Jaipur, Rajasthan,302001</p>
+          <p class="paras">Gwalior,Madhya Pradesh,474001</p>
+          <p class="paras">Trivandrum,Kerela,695008</p>
+        </div>
+        <div class="col-12">
+          <hr class="light-100">
+          <h5>&copy; raktDaan.com</h5>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Domine&display=swap" rel="stylesheet">
+
+    <link href="/css/dash_style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-md navbar-light navbar-custom sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index"><img src="/images/logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/index">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/facts">FACTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/fad">FIND</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/campsMain">CAMPS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact-us">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <% if (!!req) {%>
+                        <li class="nav-item paras active">
+                            <a class="nav-link" href="/home">PROFILE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login/logout">LOGOUT</a>
+                        </li>
+                        <% } else{ %>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/register">REGISTER</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login">LOGIN</a>
+                            </li>
+                            <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Name-->
+    <div class="hosp_name" id="hospital">
+        <br>
+        <br>
+        <h1>
+            <%= hosname %>
+        </h1>
+        <p>
+            <%= addresss %>, <%= cityy %>, <%= statee %>.
+        </p>
+
+
+    </div>
+    <br>
+
+    <div class="hosp_name">
+        <form action="/report" method="POST">
+            <button class="btn btn-danger btn-lg" style="width: 10%; margin: 0 45%;">Report</button>
+        </form>
+    </div>
+
+    <!-- Table 1 -->
+
+    <div class="card2">
+        <table class="table table-hover" class="table table-borderless">
+
+            <tbody>
+                <tr>
+                    <th scope="col" class="text-center">Blood group</th>
+                    <th scope="col" class="text-center">whole blood Bags</th>
+                    <th scope="col" class="text-center">Red blood Bags</th>
+                    <th scope="col" class="text-center">Plasma Bags</th>
+                    <th scope="col" class="text-center">Plateletes Bags</th>
+                </tr>
+
+                <tr>
+                    <td class="text-center" class="damn_border">A positive</td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[0] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[1] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[2] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[3] %>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="text-center" class="damn_border">A negative</td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[4] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[5] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[6] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[7] %>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-center" class="damn_border">B positive</td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[8] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[9] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[10] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[11] %>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-center" class="damn_border">B negative</td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[12] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[13] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[14] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[15] %>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-center" class="damn_border">AB positive</td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[16] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[17] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[18] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[19] %>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-center" class="damn_border">AB negative</td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[20] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[21] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[22] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[23] %>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-center" class="damn_border">O positive</td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[24] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[25] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[26] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[27] %>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center" class="damn_border">O negative</td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[28] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[29] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[30] %>
+                    </td>
+                    <td class="text-center" class="damn_border">
+                        <%= userData[31] %>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <!--Button Group-->
+    <div class="card2" id="#type">
+        <div class="btn-group">
+            <form name="typee" value="typee" action="/tabled" method="post">
+                <button type="submit" name="whole" value="1" class="but">Whole Blood</button>
+                <button type="submit" name="whole" value="2" class="but">Red Cells</button>
+                <button type="submit" name="whole" value="3" class="but">Plasma</button>
+                <button type="submit" name="whole" value="4" class="but">Platelets</button>
+
+            </form>
+        </div>
+
+
+
+        <!--Table 2-->
+
+        <table class="table table-hover" class="table table-borderless">
+
+            <tbody>
+                <tr>
+                    <th scope="col" class="text-center">Type</th>
+                    <th scope="col" class="text-center">No. of bags</th>
+                    <th scope="col" class="text-center">Date</th>
+                    <th scope="col" class="text-center">Expiry</th>
+                    <th scope="col" class="text-center">Delete</th>
+                </tr>
+                <% whole.forEach(function(datae){ %>
+                    <tr>
+
+                        <td class="text-center" name="bg" value="<%= datae.blood_group %>" class="damn_border">
+                            <%= datae.blood_group %>
+                                </th>
+                        <td class="text-center" name="bb" value="<%= datae.blood_units %>" class="damn_border">
+                            <%= datae.blood_units %>
+                        </td>
+                        <td class="text-center" name="en" value="<%= datae.entry_date %>" class="damn_border">
+                            <%= datae.entry_date %>
+                        </td>
+                        <td class="text-center" name="ex" value="<%= datae.expiry %>" class="damn_border">
+                            <%= datae.expiry %>
+                        </td>
+
+                        <td class="text-center" class="damn_border"><button type="submit"
+                                onclick="document.location='/tabled/<%= datae.bank_id %>'" class="btn btn-primary"
+                                name="delete" value="delete">Delete</button></td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- form -->
+    <section class="main">
+        <div class="card">
+
+
+            <div class="card-body text-center">
+                <h2 class="font-weight-light ">Add</h2>
+
+                <form class="form-container" action="/tabled" method="post">
+
+
+                    <div class="form">
+                        <div>
+                            <select class="custom-select form-control my-3 fontt" name="blood_group">
+                                <option selected>Bloodgroup</option>
+                                <option value="1">A+</option>
+                                <option value="2">A-</option>
+                                <option value="3">B+</option>
+                                <option value="4">B-</option>
+                                <option value="5">AB+</option>
+                                <option value="6">AB-</option>
+                                <option value="7">O+</option>
+                                <option value="8">O-</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select class="custom-select my-3 form-control fontt" name="component">
+                                <option selected>Component of blood</option>
+                                <option value="1">Whole blood</option>
+                                <option value="2">Red Blood Cells</option>
+                                <option value="3">Plasma</option>
+                                <option value="4">Platelets</option>
+                            </select>
+                        </div>
+
+                        <input type="text" class="form-control fontt my-3" placeholder="Number of blood_bags"
+                            name="bloodbags">
+
+                        <div class="form-group form-check">
+                            <button class=" btn-dark btn-sm form-control my-3 add fontt" type="submit" name="add"
+                                value="add"> Add </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--Footer-->
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="/images/rsz_raktadaan_logo.jpg">
+                    <hr class="light">
+                    <p>+91-9324040843</p>
+                    <p>raktdan@gmail.com</p>
+                    <p>A-5,Paradise,Godrej Hills</p>
+                    <p>Kalyan,Thane,Maharashtra,India</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Offline Hours</h5>
+                    <hr class="light">
+                    <p>Monday: 8am-10pm</p>
+                    <p>Saturday: 10am-4pm</p>
+                    <p>Sunday: 10am-1pm</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Service Areas</h5>
+                    <hr class="light">
+                    <p>Mumbai,Maharashtra,400601</p>
+                    <p>Jaipur,Rajasthan,302001</p>
+                    <p>Gwalior,Madhya Pradesh,474001</p>
+                    <p>Trivandrum,Kerala,695008</p>
+                </div>
+                <div class="col-12">
+                    <hr class="light-100">
+                    <h5>&copy; raktdaan.com</h5>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

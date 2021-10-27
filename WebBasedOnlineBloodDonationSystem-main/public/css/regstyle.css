@@ -1,0 +1,145 @@
+* {
+  margin:0px;
+  padding:0px;
+  box-sizing:border-box;
+  font-family:"Ubuntu";
+}
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #1b262c;
+}
+.main{
+  background: url("/images/bg-1.jpg");
+  background-size: 100% 100%;
+  width: 100%;
+}
+.heading{
+  font-family: 'Domine', serif;
+}
+.paras{
+  font-family: 'Ubuntu', sans-serif;
+}
+span{
+  font-size: 35px;
+  color: black;
+}
+.btn{
+  border-radius: 20px;
+  border: none;
+}
+.first_row{
+  margin-top: 100px;
+}
+.first_column{
+  margin-top: 150px;
+}
+.card {
+  width: 460px;
+  height: 1250px;
+
+}
+
+
+.register{
+  margin-bottom: 40px;
+  font-family: 'Domine', serif;
+}
+
+.form-container{
+  padding: 20px 20px;
+}
+
+.form-container1{
+  padding: 20px 20px;
+}
+
+.form .head {
+  width:100%;
+  height:55px;
+  display:flex;
+}
+.form .head > div {
+  width:50%;
+  height:100%;
+  text-align:center;
+  line-height:55px;
+  cursor:pointer;
+  background:transparent;
+  text-transform:uppercase;
+  font-size:15px;
+}
+.form .head.signup > div:nth-child(1),.form .head > div:nth-child(2) {
+  background:#eee;
+  transition: all .3s ease-in-out;
+}
+.form .head.signup > div:nth-child(2) {
+  background:transparent !important;
+  transition: all .3s ease-in-out;
+}
+
+.form .body {
+  
+ 
+  width:100%;
+  height:100%;
+}
+
+
+.form .body > div {
+  position: absolute;
+  width:100%;
+  height:100%;
+  transition:all 300ms ease-in-out;
+}
+
+.form .body > div.login {
+  left:0%;
+}
+.form .body > div.signup {
+  right:300%
+}
+.form .body.active > div.login {
+  left:-300%;
+}
+.form .body.active > div.signup {
+  left:0%;
+}
+
+
+.navbar {
+  padding: .8rem;
+  background-color: #ffe4e4;
+}
+.navbar-nav li {
+  padding-left: 20px;
+}
+.nav-link {
+  font-size: 1.1em !important;
+}
+
+footer {
+  background-color: #1b262c !important;
+  color: #d5d5d5;
+  padding-top: 2rem;
+}
+hr.light {
+  margin-left: 40px;
+  border-top: 1px solid #d5d5d5;
+  width: 75%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+}
+footer a {
+  color: #d5d5d5;
+}
+hr.light-100 {
+  border-top: 1px solid #d5d5d5;
+  width: 100%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+}
+
+
+

@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/form_style.css">
+
+  <!--font Awesome -->
+
+  <script src="https://kit.fontawesome.com/b50b5c3588.js" crossorigin="anonymous"></script>
+
+  <!--font-->
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Domine&family=Ubuntu&display=swap" rel="stylesheet">
+
+
+  <title>Find a donor</title>
+</head>
+
+<body>
+
+  <!--Navigation-->
+  <nav class="navbar navbar-expand-md navbar-light navbar-custom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/index"><img src="/images/logo.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/index">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/facts">FACTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/fad">FIND</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/campsMain">CAMPS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact-us">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+
+          <% if (!!req.session.loggedin) {%>
+            <li class="nav-item paras active">
+              <a class="nav-link" href="/home">PROFILE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login/logout">LOGOUT</a>
+            </li>
+            <% } else{ %>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">REGISTER</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">LOGIN</a>
+              </li>
+              <% } %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Main Body -->
+
+  <section class="main">
+    <div class="container py-5">
+      <div class="row first_row">
+
+        <div>
+          <div class="card py-3 px-3">
+            <div class="card-body text-center">
+              <h2 class="font-weight-light registerfad heading">Find a Donor</h2>
+
+              <form action="/fad" method="post" class="">
+
+                <div class="form">
+                  <select class="custom-select my-3 form-control" name="bloodgroup" required>
+                    <option class="paras">Blood Group</option>
+                    <option value="1">A+ve</option>
+                    <option value="2">A-ve</option>
+                    <option value="3">B+ve</option>
+                    <option value="4">B-ve</option>
+                    <option value="5">AB+ve</option>
+                    <option value="6">AB-ve</option>
+                    <option value="7">O+ve</option>
+                    <option value="8">O-ve</option>
+                  </select>
+                  <select class="custom-select form-control" name="compo" required>
+                    <option class="paras">Component of blood</option>
+                    <option value="1">Whole blood</option>
+                    <option value="2">Red blood cells</option>
+                    <option value="3">Plasma</option>
+                    <option value="4">Platelets</option>
+                  </select>
+                  <input type="text" class="form-control my-3 paras" placeholder="City" name="city" required>
+                  <input type="text" class="form-control my-3 paras" placeholder="State" name="state" required>
+                  <input type="text" class="form-control my-3 paras" placeholder="Country" name="country" required>
+                  <button class="btn btn-dark btn-sm my-3 form-control paras fadbutton" name="find" value="find"
+                    type="submit"> Find </button>
+                </div>
+            </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Donor table -->
+    <div class="card2">
+      <table class="table table-hover damn_border">
+
+        <tbody>
+          <tr>
+            <th scope="col" class="text-center damn_border">First Name</th>
+            <th scope="col" class="text-center damn_border">Last name</th>
+            <th scope="col" class="text-center damn_border">Gender</th>
+            <th scope="col" class="text-center damn_border">Age</th>
+            <th scope="col" class="text-center damn_border">Blood Group</th>
+            <th scope="col" class="text-center damn_border">Email</th>
+            <th scope="col" class="text-center damn_border">Mobile number</th>
+            <th scope="col" class="text-center damn_border">Address</th>
+            <th scope="col" class="text-center damn_border">City</th>
+            <th scope="col" class="text-center damn_border">Pin Code</th>
+            <th scope="col" class="text-center damn_border">State</th>
+            <th scope="col" class="text-center damn_border">Country</th>
+            <th scope="col" class="text-center damn_border">Ping</th>
+          </tr>
+          <% if(fin==='find' ) { %>
+            <% donor.forEach(function(dono){ %>
+              <tr>
+                <td class="damn_border">
+                  <%= dono.fname%>
+                </td>
+                <td class="damn_border">
+                  <%= dono.lname%>
+                </td>
+                <td class="damn_border">
+                  <%= dono.gender%>
+                </td>
+                <td class="damn_border">
+                  <%= dono.age%>
+                </td>
+                <td class="damn_border">
+                  <%= dono.blood_group%>
+                </td>
+                <td class="damn_border">
+                  <%= dono.email%>
+                </td>
+                <td class="damn_border">
+                  <%= dono.phone%>
+                </td>
+                <td class="damn_border">
+                  <%= dono.address%>
+                </td>
+                <td class="damn_border">
+                  <%= dono.city%>
+                </td>
+                <td class="damn_border">
+                  <%= dono.pincode%>
+                </td>
+                <td class="damn_border">
+                  <%= dono.state%>
+                </td>
+                <td class="damn_border">
+                  <%= dono.country%>
+                </td>
+                <td class="damn_border">
+                  <a href="#"><i class="far fa-envelope"></i></a>
+                </td>
+              </tr>
+              <% }); %>
+                <% } %>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Blood bank and hospitals -->
+    <div class="card2">
+      <table class="table table-hover damn_border">
+
+        <tbody>
+          <tr>
+            <th scope="col" class="text-center damn_border">Name</th>
+            <th scope="col" class="text-center damn_border">Email</th>
+            <th scope="col" class="text-center damn_border">Blood Group</th>
+            <th scope="col" class="text-center damn_border">Mobile number</th>
+            <th scope="col" class="text-center damn_border">Address</th>
+            <th scope="col" class="text-center damn_border">City</th>
+            <th scope="col" class="text-center damn_border">Pin Code</th>
+            <th scope="col" class="text-center damn_border">State</th>
+            <th scope="col" class="text-center damn_border">Ping</th>
+          </tr>
+          <% if(fin==='find' ) { %>
+            <% console.log(date); %>
+              <% bank.forEach(function(banks,index){ %>
+                <% var expiry=new Date(bank[index]['expiry']); %>
+                  <% console.log(expiry); %>
+                    <% if ((date.getDate()>= expiry.getDate()) || (date.getDate() === expiry.getDate() && date.getTime()
+                      >= expiry.getTime())){ %>
+                      <% console.log("Expired"); %>
+                        <% return %>
+                          <% } %>
+                            <tr>
+                              <td class="damn_border">
+                                <%= banks.name%>
+                              </td>
+                              <td class="damn_border">
+                                <%= banks.email%>
+                              </td>
+                              <td class="damn_border">
+                                <%= banks.blood_group%>
+                              </td>
+                              <td class="damn_border">
+                                <%= banks.contact%>
+                              </td>
+                              <td class="damn_border">
+                                <%= banks.address%>
+                              </td>
+                              <td class="damn_border">
+                                <%= banks.city%>
+                              </td>
+                              <td class="damn_border">
+                                <%= banks.pincode%>
+                              </td>
+                              <td class="damn_border">
+                                <%= banks.state%>
+                              </td>
+                              <td class="damn_border">
+                                <a href="#"><i class="far fa-envelope"></i></a>
+                              </td>
+                            </tr>
+
+                            <% }); %>
+                              <% } %>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+
+  <!--Footer-->
+  <footer>
+    <div class="container-fluid padding">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <img src="/images/rsz_raktadaan_logo.jpg">
+          <hr class="light">
+          <p class="paras">555 555 555 555</p>
+          <p class="paras">raktdan@gmail.com</p>
+          <p class="paras">A-5,Paradise ,Godrej Hills</p>
+          <p class="paras">Kalyan, Thane,Maharashtra,India</p>
+        </div>
+        <div class="col-md-4">
+          <hr class="light">
+          <h5 class="heading">Offline Hours</h5>
+          <hr class="light">
+          <p class="paras">Monday: 9am-5pm</p>
+          <p class="paras">Saturday: 10am-4pm</p>
+          <p class="paras">Sunday: 10am-1pm</p>
+        </div>
+        <div class="col-md-4">
+          <hr class="light">
+          <h5 class="heading">Service Areas</h5>
+          <hr class="light">
+          <p class="paras">City, State, 00000</p>
+          <p class="paras">City, State, 00000</p>
+          <p class="paras">City, State, 00000</p>
+          <p class="paras">City, State, 00000</p>
+        </div>
+        <div class="col-12">
+          <hr class="light-100">
+          <h5>&copy; raktDaan.com</h5>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

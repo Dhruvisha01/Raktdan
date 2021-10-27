@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--style-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/form_style.css">
+    <!--font awesome-->
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Domine&family=Ubuntu&display=swap" rel="stylesheet">
+
+    <title>Contact Us</title>
+</head>
+
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-md navbar-light navbar-custom sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="indexhome.html"><img src="/images/logo.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/index">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/facts">FACTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/fad">FIND</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/campsMain">CAMPS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact-us">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+
+                    <% if (!!req.session.loggedin) {%>
+                        <li class="nav-item paras active">
+                            <a class="nav-link" href="/home">PROFILE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login/logout">LOGOUT</a>
+                        </li>
+                        <% } else{ %>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/register">REGISTER</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login">LOGIN</a>
+                            </li>
+                            <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="main">
+        <section class="get_in_touch">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="title">contact us</h1>
+
+                    <div class="container">
+                        <form action="/contact-us/send" method="POST" id="contact-form" enctype="multipart/form-data">
+                            <div class="contact-form row">
+                                <div class="form-field col-lg-6">
+                                    <input id="name" class="input-text" name="name" type="text" required>
+                                    <label for="name" class="label paras">name</label>
+                                </div>
+                                <div class="form-field col-lg-6">
+                                    <input id="email" class="input-text" name="email" type="email" required>
+                                    <label for="email" class="label paras">email</label>
+                                </div>
+                                <div class="form-field col-lg-6">
+                                    <input id="company" class="input-text" name="company" type="text" required>
+                                    <label for="company" class="label paras">company name</label>
+                                </div>
+                                <div class="form-field col-lg-6">
+                                    <input id="contact no" class="input-text" name="phone" type="text" required>
+                                    <label for="contact no" class="label paras">contact number</label>
+                                </div>
+                                <div class="form-field col-lg-12">
+                                    <input id="message" class="input-text" name="msg" type="text" required>
+                                    <label for="message" class="label paras">message</label>
+                                </div>
+
+                                <div class="form-field col-lg-12">
+                                    <button class="submit-btn paras" type="submit" name="submit"
+                                        value="submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="content">
+                        <div class="address">
+                            <h3 class="title2 paras">Find us at</h3>
+                            <p class="para paras">A-5 Paradise, Godrej hill, Kalyan,<br> Thane,<br> Maharashtra,<br>
+                                India</p>
+                        </div>
+                        <div class="call">
+                            <h3 class="title2 paras">Call us</h3>
+                            <p class="para paras">Rashmi Singh <br>+91-9324040843 <br>Monday-Friday, 8.00-22.00
+                                <br>Saturday , 10:00-16:00 <br>Sunday ,10:00-13:00
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+
+
+    <!--Footer-->
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="/images/rsz_raktadaan_logo.jpg">
+                    <hr class="light">
+                    <p class="paras">+91-9324040843</p>
+                    <p class="paras">raktdan@gmail.com</p>
+                    <p class="paras">A-5, Paradise, Godrej Hills</p>
+                    <p class="paras">Kalyan,Thane,Maharashtra,India</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5 class="heading">Offline Hours</h5>
+                    <hr class="light">
+                    <p class="paras">Monday: 8am-10pm</p>
+                    <p class="paras">Saturday: 10am-4pm</p>
+                    <p class="paras">Sunday: 10am-1pm</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5 class="paras">Service Areas</h5>
+                    <hr class="light">
+                    <p class="paras">Mumbai, Maharshtra, 400601</p>
+                    <p class="paras">Jaipur, Rajasthan, 302001</p>
+                    <p class="paras">Gwalior, Madhya Pradesh, 474001</p>
+                    <p class="paras">Trivandrum, Kerela, 695008</p>
+                </div>
+                <div class="col-12">
+                    <hr class="light-100">
+                    <h5 class="paras">&copy; raktDaan.com</h5>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="ContactForm.js"></script>
+</body>
+
+</html>
